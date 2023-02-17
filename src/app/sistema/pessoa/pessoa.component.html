@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header text-center">
+    Cadastro de Usuário
+  </div>
+  <div class="card-body">
+    <div class="container" [formGroup]="formulario">
+      <div class="row">
+        <div class="form-group col-6">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome">
+        </div>
+
+        <div class="form-group col-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-4">
+          <label for="cpf">CPF</label>
+          <input type="text" class="form-control" id="cpf" placeholder="999.999.999-99" [textMask]="{ mask: cpfMask }" formControlName="cpf">
+        </div>
+        <div class="form-group col-4">
+          <label for="telefone">Telefone</label>
+          <input type="text" class="form-control" id="telefone" placeholder="(61) 9.9999-9999" formControlName="telefone">
+        </div>
+        <div class="form-group col-4">
+          <label for="perfil">Perfil</label>
+          <select class="form-control" id="perfil">
+            <option>Vendedor</option>
+            <option>Administrador</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <textarea class="form-control" id="endereco" rows="3" formControlName="endereco"></textarea>
+      </div>
+      <div class="d-flex">
+        <button type="button" class="ml-auto p-2 btn btn-danger mr-3" (click)="fecharModal()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+      </div>
+    </div>
+  </div>
+</div>
